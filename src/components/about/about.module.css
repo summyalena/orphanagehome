@@ -57,7 +57,6 @@
 
 .sectiongrid:first-child > div {
   order: 1;
-  background-color: blue;
 }
 
 .sectiongrid > div:first-child button,
