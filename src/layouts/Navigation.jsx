@@ -8,7 +8,6 @@ import Image from 'next/image';
 
 import styles from './layout.module.css';
 import Button from '@/ui/Button';
-import imageone from '../../public/assests/images/herosectionimage.svg';
 
 
 function Navigation() {
@@ -22,6 +21,12 @@ const navigateButton = () => {
 const handleMenu = () => {
   setMobileMenu(!mobilemenu);
   console.log(mobilemenu);
+  document.body.classList.toggle('no-scroll');
+}
+
+const removeScroll = () => {
+  document.body.classList.remove('no-scroll');
+
 }
 
   const links = [
@@ -47,11 +52,16 @@ const handleMenu = () => {
         <Link href='/'>
         LOGO
         </Link>
-        <ul className={`flex gap-lg center ${styles.navlist} ${ mobilemenu ? styles.mobile : ''}`}>
+        <ul className={`flex gap-md ${styles.navlist} ${ mobilemenu ? styles.mobile : ''}`}>
         {links.map((link)=> (
           <li key={link.id}>
-            <Link href={link.link}>{link.name}</Link></li>
+            <Link onClick={removeScroll} href={link.link}>{link.name}</Link></li>
         ))}
+         <Button className={styles.donatebtn} onClick={navigateButton} type="button">
+          <Link href='/donate'>
+          Donate now
+          </Link>
+        </Button>
         </ul>
 
         <Button className={styles.donatebtn} onClick={navigateButton} type="button">

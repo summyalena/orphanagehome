@@ -31,7 +31,7 @@ function Footer() {
            <li>Our Work</li>
           </ul>    
         </div>
-        <div className='flex flex-col gap-sm'>
+        <div className={`flex flex-col gap-sm ${styles.lastlist}`}>
         <h6>Get involved with us</h6>
         <ul className='flex gap-sm'>
           <li>Facebook</li>

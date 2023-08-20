@@ -3,33 +3,48 @@
   color: var(--background-color-1);
 }
 
-.herocontent h1 {
+.herocontainer {
+  background-image: url("../../../public/assests/images/HomeHeros.svg");
+  width: 100%;
+  height: 80vh;
+  background-repeat: no-repeat;
+}
+
+.herocontent {
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  padding-top: 3rem;
+}
+
+.herocontent > div > h1 {
   font-size: 1.5rem;
 }
 
-.herocontent p {
-  font-size: 2.1rem;
-}
-
-.scrollbutton {
-  position: absolute;
-  top: 400px;
-  left: 40%;
- }
-
-.scrollbutton p {
-  font-size: 1rem;
+.herocontent > div > p {
+  font-size: 1.6rem;
 }
 
 .herobuttons {
-  position: absolute;
-  top: 150px;
-  left: 1%;
+  flex-direction: column;
 }
 
-.herobuttons button {
+.scrollbutton {
+  align-self: flex-end;
+}
+
+.scrollbutton p {
+  font-size: 0.8rem;
+}
+
+.buttons button {
   color: white;
-  padding: 1rem 3rem;
+  padding: 0.6rem 1.5rem;
+}
+
+.buttons button:hover {
+  background-color: var(--background-color-1);
+  color: black;
 }
 
 .cardone {
@@ -66,6 +81,10 @@
 
 .helptextcard p {
   font-size: 1.5rem;
+}
+
+.impactcontainer {
+  background-color: yellow;
 }
 
 .impactcontainer > h4 {
@@ -106,19 +125,25 @@
   z-index: 100;
 }
 
-.navigations > img:last-child{
-   background-color: white;
-   border-radius: 50%;
-   padding: 0.2rem;
+.navigations > img:last-child {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.2rem;
 }
+
+
 
 @media (min-width: 768px) {
   .helpsection {
     grid-template-columns: 0.8fr 0.4fr;
   }
 
-  .herocontent h1 {
+  .herocontent > div > h1 {
     font-size: 2rem;
+  }
+
+  .herocontent > div > p {
+    font-size: 2.1rem;
   }
 
   .helptextcard {
@@ -126,15 +151,17 @@
     padding-inline-start: 3rem;
   }
 
-  .scrollbutton {
-    position: absolute;
-    top: 120px;
-    left: 80%;
+  .herobuttons {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .herobuttons {
-    position: absolute;
-    top: 120px;
-    left: 1%;
+  .buttons button {
+    color: white;
+    padding: 0 3rem !important;
+  }
+
+  .scrollbutton p {
+    font-size: 1rem;
   }
 }

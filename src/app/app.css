@@ -126,7 +126,8 @@
   position: relative;
   top: 0;
   right: 0;
-  background-color: var(--background-color);
+  background-color: blue;
+  
 }
 
 .navigations {

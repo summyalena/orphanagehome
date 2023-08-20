@@ -1,4 +1,5 @@
 "use client";
+import React, {useState} from "react";
 
 import Image from "next/image";
 
@@ -9,12 +10,16 @@ import Imagethree from "../../../public/assests/images/partnership.svg";
 import Imagefour from "../../../public/assests/icons/pray.svg";
 import Imagefive from "../../../public/assests/images/inkindonation.svg";
 import Container from "@/ui/Container";
-import React from "react";
 import styles from "./donate.module.css";
 import Card from "@/ui/Card";
-import Button from '@/ui/Button';
 
 function DonateContent() {
+  const [openmodal, setOpenModal] = useState(false);
+
+  const handleModalClick = () => {
+    setOpenModal(!openmodal);
+    console.log('yellow');
+  }
   return (
     <Container className={styles.donatecontainer}>
       <Gridtemplate className={styles.donategrid}>
@@ -35,18 +40,21 @@ function DonateContent() {
           image={<Image src={Imagethree} alt="" />}
           text="DONATION"
           message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
+          handleClick={handleModalClick}
         />
         <Card
           className={styles.cardfour}
           image={<Image src={Imagefour} alt="" />}
           text="SPONSOR A CHILD"
           message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
+          handleClick={handleModalClick}
         />
         <Card
           className={styles.cardfive}
           image={<Image src={Imagefive} alt="" />}
-          text="SPONSOR A CHILD"
+          text="IN-KIND DONATION"
           message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
+          handleClick={handleModalClick}
         />
       </Gridtemplate>
     </Container>

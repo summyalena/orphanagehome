@@ -1,5 +1,45 @@
-.heroabout {
-  color: white;
+.herocontent,
+.scrollbutton {
+  color: var(--background-color-1);
+}
+
+.herocontainer {
+  background-image: url("../../../public/assests/images/Rectangle63.svg");
+  width: 100%;
+  height: 80vh;
+  background-repeat: no-repeat;
+}
+
+.herocontent {
+  height: 100%;
+  width: 100%;
+  padding-top: 3rem;
+  align-items: flex-start;
+}
+
+.herocontent > div > h1 {
+  font-size: 1.5rem;
+}
+
+.herocontent > div:first-child > p {
+  font-size: 1rem;
+}
+
+.herobuttons {
+  flex-direction: column;
+}
+
+.herobuttons p {
+  font-size: 1.5rem;
+  max-width: 50ch;
+}
+
+.scrollbutton {
+  align-self: flex-end;
+}
+
+.scrollbutton p {
+  font-size: 0.8rem;
 }
 
 .sectiongrid {
@@ -15,19 +55,24 @@
   align-items: flex-start;
 }
 
+.sectiongrid:first-child > div {
+  order: 1;
+  background-color: blue;
+}
+
 .sectiongrid > div:first-child button,
 .sectiongrid > div:last-child button {
- background-color: #92ABFC;
+  background-color: #92abfc;
 }
 
 .secimage {
- width: 100%;
- height: 100%;
- object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .staffgrid > div:last-child {
- align-items: flex-start;
+  align-items: flex-start;
 }
 
 .staffimage {
@@ -36,7 +81,25 @@
   object-fit: contain;
 }
 
-@media (min-width: 768px){
+@media (min-width: 768px) {
+  .herocontent > div > h1 {
+    font-size: 2rem;
+  }
 
-  
+  .herobuttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .herobuttons p {
+    font-size: 3rem;
+  }
+
+  .scrollbutton p {
+    font-size: 1rem;
+  }
+
+  .sectiongrid:first-child > img {
+    order: 0;
+  }
 }

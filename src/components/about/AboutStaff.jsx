@@ -4,7 +4,7 @@ import React from 'react'
 
 import Image from 'next/image';
 
-import imageone from '../../../public/assests/images/Rectangle 6(3).svg';
+import imageone from '../../../public/assests/images/Rectangle63.svg';
 import Gridtemplate from '@/ui/Gridtemplate'
 import Button from '@/ui/Button';
 import styles from './about.module.css';

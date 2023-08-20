@@ -6,35 +6,32 @@ import Image from 'next/image';
 import arrow from '../../../public/assests/images/downarrow.svg'
 
 import styles from './homepage.module.css';
-import imageone from '../../../public/assests/images/HomeHeros.svg';
-import Hero from '@/ui/Hero';
 import Navigation from '@/layouts/Navigation';
 import Button from '@/ui/Button';
+import Container from '@/ui/Container';
 
 
 function Herosection() {
   return (
     <div className={`full-width ${styles.herocontainer}`}>
       <Navigation/>
-      <Hero
-      background={
-      <Image src={imageone} alt="image of child"/>
-      }
-      content={<>
-      <div className={`flex flex-col ${styles.herocontent}`}>
+      <Container className={`flex flex-col gap-md align-x ${styles.herocontent}`}>
+        <div>
         <h1>Content management system overall</h1>
-        <p>Be a beacon of hope</p>
-        <div className={`flex center gap-sm ${styles.herobuttons}`}>
+        <p>BE A BEACON OF HOPE</p>
+        </div>
+        <div className={`full-width flex gap-md ${styles.herobuttons}`}>
+          <div className={`flex gap-sm ${styles.buttons}`}>
           <Button>Donate now</Button>
           <Button>Be a Partner</Button>
-         </div>
-         <div className={`flex center gap-sm flex-col ${styles.scrollbutton}`}>
+          </div>
+          <div className={`flex center gap-sm flex-col ${styles.scrollbutton}`}>
           <p>Scroll down for more</p>
           <Image src={arrow} alt='arrow_down'/>
         </div>
          </div>
-      </>}
-      />
+        
+        </Container>
     </div>
   )
 }

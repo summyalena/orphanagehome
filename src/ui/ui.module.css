@@ -4,7 +4,7 @@
 
 .button {
   border-radius: 5rem;
-  padding: 1rem 4rem;
+  padding: 0.9rem 3.5rem;
   background: transparent;
   border: 0.1rem solid var(--primary-color-1);
 }
@@ -17,12 +17,16 @@
   z-index: -10;
 }
 
+.hero {
+  width: 100%;
+}
+
 .content {
   position: absolute;
   top: 400px;
   left: 10%;
   color: white;
-  width: 95%;
+  background: blue;
 }
 
 .card {
@@ -39,7 +43,7 @@
 .card > div > button {
   color: #3E030E;
   border: 1px solid #3E030E;
-  ;
+  cursor: pointer;
 }
 
 @media (min-width: 768px){

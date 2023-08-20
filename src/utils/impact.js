@@ -1,4 +1,4 @@
-import imageone from '../../public/assests/images/Rectangle 7.svg';
+import imageone from '../../public/assests/images/Rectangle7.svg';
 
 const impact = [
   {
