@@ -12,6 +12,7 @@ import Container from "@/ui/Container";
 import React from "react";
 import styles from "./donate.module.css";
 import Card from "@/ui/Card";
+import Button from '@/ui/Button';
 
 function DonateContent() {
   return (
@@ -21,7 +22,7 @@ function DonateContent() {
           className={styles.cardone}
           image={<Image src={Imageone} alt="" />}
           text="PRAY WITH US"
-          message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
+          message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam"
         />
         <Card
           className={styles.cardtwo}

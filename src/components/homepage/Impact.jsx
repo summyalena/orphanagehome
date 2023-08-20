@@ -13,6 +13,7 @@ import "swiper/css/a11y";
 import Container from '@/ui/Container';
 import impact from '@/utils/impact';
 import arrow from '../../../public/assests/images/arrowright (2).svg';
+import arrowleft from '../../../public/assests/images/arrowleftt.svg';
 import styles from './homepage.module.css';
 
 function Impact() {
@@ -57,7 +58,8 @@ function Impact() {
         </SwiperSlide>
       ))}
        <button className={`flex align-x ${styles.navigations}`}>
-      <Image width={60} height={60} objectFit='contain' src={arrow} alt="arrow_right"/>
+      <Image className='next' width={40} height={40} objectFit='contain' src={arrow} alt="arrow_right"/>
+      <Image src={arrowleft} width={25} height={25} objectFit='contain' />
      </button>
      </Swiper>
     </Container>

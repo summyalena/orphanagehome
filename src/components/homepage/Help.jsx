@@ -6,7 +6,7 @@ import Image from "next/image";
 import Container from "@/ui/Container";
 import styles from "./homepage.module.css";
 import Gridtemplate from "@/ui/Gridtemplate";
-import Card from "@/ui/Card";
+import HelpCard from "@/ui/HelpCard";
 
 import Imageone from "../../../public/assests/icons/pray.svg";
 import Imagetwo from "../../../public/assests/icons/fundrasiing.svg";
@@ -19,25 +19,25 @@ function Help() {
     <Container className={`grid center gap-sm ${styles.helpsection}`}>
       <div>
         <Gridtemplate className={styles.helpgrid}>
-          <Card
+          <HelpCard
             className={styles.cardone}
             image={<Image src={Imageone} alt="" />}
             text="PRAY WITH US"
             message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
           />
-          <Card
+          <HelpCard
             className={styles.cardtwo}
             image={<Image src={Imagetwo} alt="" />}
             text="FUND RAISING"
             message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
           />
-          <Card
+          <HelpCard
             className={styles.cardthree}
             image={<Image src={Imagethree} alt="" />}
             text="DONATION"
             message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam "
           />
-          <Card
+          <HelpCard
             className={styles.cardfour}
             image={<Image src={Imagefour} alt="" />}
             text="SPONSOR A CHILD"
@@ -46,7 +46,7 @@ function Help() {
         </Gridtemplate>
       </div>
 
-      <div className={`flex flex-col align-x gap-sm ${styles.helptextcard}`}>
+      <div className={`flex flex-col align-x gap-md ${styles.helptextcard}`}>
         <h5>HOW TO HELP</h5>
         <p>Help us make a difference</p>
         <Button className={styles.donatebtn}>Donate Now</Button>

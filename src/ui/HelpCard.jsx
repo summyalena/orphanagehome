@@ -3,7 +3,6 @@
 import React from 'react'
 
 import styles from './ui.module.css';
-import Button from './Button';
 
 function Card({image, text, message, className}) {
   return (
@@ -12,7 +11,6 @@ function Card({image, text, message, className}) {
      <div className='gap-sm flex flex-col center'>
       <h5>{text}</h5>
       <p>{message}</p>
-      <Button>Donate now</Button>
      </div>
     </div>
   )
