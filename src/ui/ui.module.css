@@ -9,7 +9,7 @@
   border: 0.1rem solid var(--primary-color-1);
 }
 
-.background img{
+.background img {
   position: relative;
   object-fit: cover;
   width: 100%;
@@ -26,7 +26,6 @@
   top: 400px;
   left: 10%;
   color: white;
-  background: blue;
 }
 
 .card {
@@ -36,23 +35,141 @@
 }
 
 .card > div {
- text-align: center;
- font-family: 'Inter' sans-serif;
+  text-align: center;
+  font-family: "Inter" sans-serif;
 }
 
 .card > div > button {
-  color: #3E030E;
-  border: 1px solid #3E030E;
+  color: #3e030e;
+  border: 1px solid #3e030e;
   cursor: pointer;
 }
 
-@media (min-width: 768px){
-  .sectioncontainer{
+.scrollbutton p {
+  font-size: 0.8rem;
+}
+
+.scrollbutton button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.form {
+  align-items: flex-start;
+}
+
+.form label {
+  font-size: 0.6rem;
+  margin-bottom: -0.5rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.1rem solid #919ba7;
+  font-size: 1rem;
+  background-color: white;
+  color: #dae0e6;
+}
+
+.form button,
+.modalcontainer ul > button {
+  background-color: #92abfc;
+  margin: 0 auto;
+}
+
+.modalcontainer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.185);
+}
+
+.modalcontainer h2 {
+  font-size: 0.7rem;
+  font-weight: 200;
+}
+
+.modalcontainer ul {
+  width: 100%;
+}
+
+.modalcontainer ul li {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+  width: 100%;
+}
+
+.modalcontainer > div {
+  background-color: #f0f0f0;
+  border-radius: 0.2rem;
+  max-width: 310px;
+  padding: 1rem;
+  overflow-y: auto;
+  height: 100%;
+  z-index: 100;
+  margin: 0.2rem auto;
+}
+
+.modalcard {
+  background-color: #fece32;
+  padding: 1rem;
+}
+
+.heading,
+.acctheading {
+  justify-content: space-between;
+  padding: 0;
+}
+
+.heading img,
+.acctheading img {
+  display: flex;
+  align-self: flex-end;
+  width: 30%;
+  height: 30%;
+}
+
+.heading img:first-child,
+.acctheading img:first-child {
+  margin-left: -1.3rem;
+}
+
+.heading img:last-child,
+.acctheading img:last-child {
+  margin-right: -1.3rem;
+}
+
+.modalcontainer button {
+  background-color: #92abfc;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .sectioncontainer {
     padding: 2rem 3rem;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  }
+
+  .scrollbutton p {
+    font-size: 1rem;
+  }
+
+  .modalcontainer > div {
+    max-width: 470px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem 4rem;
   }
 }
