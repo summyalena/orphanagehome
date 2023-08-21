@@ -6,8 +6,9 @@
 .herocontainer {
   background-image: url("../../../public/assests/images/Rectangle63.svg");
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .herocontent {
@@ -15,31 +16,32 @@
   width: 100%;
   padding-top: 3rem;
   align-items: flex-start;
+  position: relative;
+  top: 100px;
 }
 
 .herocontent > div > h1 {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
 }
 
 .herocontent > div:first-child > p {
   font-size: 1rem;
 }
 
-.herobuttons {
+.heroAboutbuttons {
   flex-direction: column;
 }
 
-.herobuttons p {
-  font-size: 1.5rem;
-  max-width: 50ch;
+.heroAboutbuttons p {
+  font-size: 1.2rem;
+  max-width: 25ch;
 }
 
-.scrollbutton {
-  align-self: flex-end;
-}
-
-.scrollbutton p {
-  font-size: 0.8rem;
+.scroll {
+  position: absolute;
+  bottom: -385px;
+  right: 2%;
+  top: 0;
 }
 
 .sectiongrid {
@@ -82,23 +84,28 @@
 
 @media (min-width: 768px) {
   .herocontent > div > h1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
-  .herobuttons {
+  .heroAboutbuttons {
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .herobuttons p {
-    font-size: 3rem;
-  }
-
-  .scrollbutton p {
-    font-size: 1rem;
+  .heroAboutbuttons > p {
+    font-size: 2rem;
+    max-width: 20ch;
   }
 
   .sectiongrid:first-child > img {
     order: 0;
   }
+
+  .scroll {
+    position: absolute;
+    bottom: 0;
+    top: 110px;
+    right: 5%;
+  }
+
 }

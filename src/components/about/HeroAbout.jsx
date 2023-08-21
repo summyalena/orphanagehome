@@ -2,12 +2,10 @@
 
 import React from 'react'
 
-import Image from 'next/image';
-
 import Navigation from '@/layouts/Navigation';
 import styles from './about.module.css';
 import Container from '@/ui/Container';
-import arrow from '../../../public/assests/images/downarrow.svg'
+import ScrollToDown from "@/ui/ScrollToDown";
 
 function HeroAbout() {
   return (
@@ -19,12 +17,9 @@ function HeroAbout() {
         <div>
           <h1>Name of orphanage</h1>
         </div>
-        <div className={`full-width flex gap-md ${styles.herobuttons}`}>
+        <div className={`full-width flex gap-md ${styles.heroAboutbuttons}`}>
          <p>Some to Adopt, Some to Care, Some to Give</p>
-          <div className={`flex center gap-sm flex-col ${styles.scrollbutton}`}>
-            <p>Scroll down for more</p>
-            <Image src={arrow} alt="arrow_down" />
-          </div>
+         <ScrollToDown className={styles.scroll} />
         </div>
       </Container>
     </div>

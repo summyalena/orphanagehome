@@ -85,17 +85,6 @@
   background-color: var(--background-color);
 }
 
-.next,
-.prev {
-  border-radius: 50%;
-  background-color: rgba(177, 176, 176, 0.479);
-  padding: 0.2rem;
-  width: 40px;
-  height: 40px;
-  z-index: 50;
-  cursor: pointer;
-}
-
 .mySwiper:hover {
   opacity: 1;
   transition-delay: 3s;
@@ -125,9 +114,7 @@
 .mySwiper {
   position: relative;
   top: 0;
-  right: 0;
-  background-color: blue;
-  
+  right: 0;  
 }
 
 .navigations {
