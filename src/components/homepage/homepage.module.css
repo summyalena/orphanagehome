@@ -5,9 +5,9 @@
 
 .herocontainer {
   background-image: url("../../../public/assests/images/HomeHeros.svg");
-  width: 100%;
-  height: 80vh;
+  height: 100vh;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .herocontent {
@@ -15,6 +15,15 @@
   width: 100%;
   align-items: flex-start;
   padding-top: 3rem;
+  position: relative;
+  top: 100px;
+}
+
+.scroll {
+  position: absolute;
+  bottom: -395px;
+  right: 2%;
+  top: 0;
 }
 
 .herocontent > div > h1 {
@@ -27,14 +36,6 @@
 
 .herobuttons {
   flex-direction: column;
-}
-
-.scrollbutton {
-  align-self: flex-end;
-}
-
-.scrollbutton p {
-  font-size: 0.8rem;
 }
 
 .buttons button {
@@ -67,6 +68,16 @@
   padding: 1rem;
 }
 
+.hopecontainer > h2 {
+  max-width: 30ch;
+  font-weight: 300;
+}
+
+.impactcontainer > h3,
+.impactcontainer > h4 {
+  font-weight: 500;
+}
+
 .helptextcard {
   align-items: center;
   padding-block-start: 3rem;
@@ -80,36 +91,40 @@
 }
 
 .helptextcard p {
-  font-size: 1.5rem;
-}
-
-.impactcontainer {
-  background-color: yellow;
-}
-
-.impactcontainer > h4 {
-  margin-bottom: 3rem;
+  font-size: 1rem;
 }
 
 .impactcontainer > div:first-child {
   align-self: baseline;
 }
 
-.impactslider > img {
+.impactcontainer > h3 {
+  border-top: 3px solid rgb(255, 175, 119);
+  max-width: 12ch;
+  padding: 0.1rem;
+}
+
+.impactcontainer > h4{
+  font-size: 1.5rem;
+  max-width: 30ch;
+}
+
+.impactslider h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.impactslider > img,
+.hopeslider > img  {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
 .impactslider p {
-  max-width: 40ch;
-}
-
-.navigations {
-  position: absolute;
-  top: 0;
-  right: 40px;
-  z-index: 100;
+  max-width: 45ch;
+  font-size: 0.8rem;
+  font-weight: 200;
 }
 
 .donatebtn {
@@ -118,28 +133,44 @@
 }
 
 .navigations {
-  background-color: transparent;
-  border: none;
+display: none;
+}
+
+.sliders {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.hopeslider img {
+  position: relative;
+  top: 0;
+  right: -20%;
+}
+
+.hopeslider h4 {
   position: absolute;
-  right: 20%;
-  z-index: 100;
+  top: 50%;
+  left: 0;
+  right: 10%;
+  bottom: 50%;
+  font-size: 1.8rem;
 }
-
-.navigations > img:last-child {
-  background-color: white;
-  border-radius: 50%;
-  padding: 0.2rem;
-}
-
-
 
 @media (min-width: 768px) {
   .helpsection {
     grid-template-columns: 0.8fr 0.4fr;
   }
 
+  .helptextcard p {
+    font-size: 1.5rem;
+  }
+  
   .herocontent > div > h1 {
     font-size: 2rem;
+  }
+
+  .herocontent {
+    top: 180px;
   }
 
   .herocontent > div > p {
@@ -158,10 +189,34 @@
 
   .buttons button {
     color: white;
-    padding: 0 3rem !important;
+    padding: 1rem 3rem !important;
   }
 
-  .scrollbutton p {
-    font-size: 1rem;
+  .scroll {
+    position: absolute;
+    bottom: 0;
+    top: 110px;
+    right: 5%;
+  }
+
+  .navigations {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 5%;
+    top: -11%;
+    z-index: 100;
+    display: flex;
+  }
+
+  .navigations > img:last-child {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.55rem;
+    border: 0.1rem solid #FFAF77;
+  }
+  
+  .sliders {
+    margin-top: 5rem;
   }
 }

@@ -50,13 +50,6 @@ function Impact() {
       >
         <button className={`flex align-x ${styles.navigations}`}>
           <Image
-            className="prev"
-            src={arrowleft}
-            width={25}
-            height={25}
-            objectFit="contain"
-          />
-          <Image
             className="next"
             width={40}
             height={40}
@@ -64,10 +57,17 @@ function Impact() {
             src={arrow}
             alt="arrow_right"
           />
+          <Image
+            className="prev"
+            src={arrowleft}
+            width={20}
+            height={20}
+            objectFit="contain"
+          />
         </button>
         {impact.map((el) => (
-          <SwiperSlide key={el.id}>
-            <div className={styles.impactslider}>
+          <SwiperSlide key={el.id} className={styles.sliders}>
+            <div className={`flex flex-col gap-sm ${styles.impactslider}`}>
               <Image src={el.image} alt={el.heading} />
               <h2>{el.heading}</h2>
               <p>{el.text}</p>
