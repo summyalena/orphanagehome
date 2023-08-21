@@ -29,15 +29,13 @@ const closeInkindModal = () => {
 
   return (
     <div className={styles.modalcontainer}>
-      <div className="flex flex-col center gap-sm">
-        <div className={`flex full-width ${styles.inkindheading}`}>
-          <Image onClick={closeInkindModal} src={badsign} alt="badsign" />
-        </div>
+      <div className="flex flex-col gap-sm">
+          <Image width={40} height={40} onClick={closeInkindModal} src={badsign} alt="badsign" />
         <Card
           image={<Image src={Imageone} alt="" />}
           text="IN-KIND DONATION"
-          message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et ligula penatibus at sed morbi donec. Etiam"
-          className={styles.modalcard}
+          message="Lorem ipsum dolor sit amet consectetur. Neque magna augue et"
+          className={styles.ikmodalcard}
         />
         <p>What would you like to give us</p>
         <form

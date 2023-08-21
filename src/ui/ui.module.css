@@ -112,14 +112,17 @@
   max-width: 310px;
   padding: 1rem;
   overflow-y: auto;
-  height: 100%;
+  height: 100vh;
   z-index: 100;
-  margin: 0.2rem auto;
+  margin: 0 auto;
 }
 
-.modalcard {
+
+.modalcard,
+.ikmodalcard {
   background-color: #fece32;
   padding: 1rem;
+  border-radius: 0.1rem !important;
 }
 
 .heading,
@@ -166,10 +169,10 @@
   }
 
   .modalcontainer > div {
-    max-width: 470px;
+    max-width: 570px;
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2rem 4rem;
+    padding: 3rem 4rem;
   }
 }
