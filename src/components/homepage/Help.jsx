@@ -13,11 +13,12 @@ import Imagetwo from "../../../public/assests/icons/fundrasiing.svg";
 import Imagethree from "../../../public/assests/icons/donation.svg";
 import Imagefour from "../../../public/assests/icons/sponsor.svg";
 import Button from "@/ui/Button";
+import Link from 'next/link';
 
 function Help() {
   return (
-    <Container className={`grid center gap-sm ${styles.helpsection}`}>
-      <div>
+    <Container id='help' className={`grid center gap-sm ${styles.helpsection}`}>
+      <div id="help">
         <Gridtemplate className={styles.helpgrid}>
           <HelpCard
             className={styles.cardone}
@@ -49,7 +50,7 @@ function Help() {
       <div className={`flex flex-col align-x gap-md ${styles.helptextcard}`}>
         <h5>HOW TO HELP</h5>
         <p>Help us make a difference</p>
-        <Button className={styles.donatebtn}>Donate Now</Button>
+        <Button className={styles.donatebtn}><Link href="/donate">Donate Now</Link></Button>
       </div>
     </Container>
   );

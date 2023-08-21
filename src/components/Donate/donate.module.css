@@ -5,16 +5,25 @@
 
 .herocontainer {
   background-image: url("../../../public/assests/images/Rectangle63.svg");
-  width: 100%;
-  height: 80vh;
+  height: 100vh;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .herocontent {
   height: 100%;
   width: 100%;
-  margin-top: 2rem;
   align-items: flex-start;
+  padding-top: 3rem;
+  position: relative;
+  top: 100px;
+}
+
+.scroll {
+  position: absolute;
+  bottom: -395px;
+  right: 2%;
+  top: 0;
 }
 
 .herocontent > div > h1 {
@@ -36,41 +45,47 @@
   line-height: 1.2;
 }
 
-.scrollbutton {
-  align-self: flex-end;
-}
-
-.scrollbutton p {
-  font-size: 0.8rem;
-}
-
-.cardone, 
-.cardtwo,
-.cardthree,
-.cardfour,
-.cardfive {
-  padding: 2.7rem 2rem;
+.card,
+.inkind {
+  padding: 2rem 2rem;
   border-radius: 0.2rem !important;
   border: 1px solid #4B514F;
+  border-radius: 0.5rem;
+  max-width: 40ch;
+  padding: 3rem 1rem;
 }
 
-.cardone {
+.card > div {
+ text-align: center;
+ font-family: 'Inter' sans-serif;
+}
+
+.card > div > button {
+  color: #3E030E;
+  border: 1px solid #3E030E;
+  cursor: pointer;
+}
+
+.card:first-child{
   background-color: #FECE32;
 }
 
-.cardtwo {
+.card:nth-child(2){
   background-color: #FFAF77
+
 }
 
-.cardthree {
+.card:nth-child(3){
   background-color: #BA80E6;
+
 }
 
-.cardfour {
+.card:nth-child(4){
   background-color: #92ABFC;
+
 }
 
-.cardfive {
+.inkind {
   background-color: white;
   color: black;
 }
@@ -92,8 +107,12 @@
   .herobuttons > p {
     font-size: 1.2rem;
   }
-  
-  .scrollbutton p {
-    font-size: 1rem;
+
+  .scroll {
+    position: absolute;
+    bottom: 0;
+    top: 160px;
+    right: 5%;
   }
+  
 }
