@@ -3,19 +3,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { useState } from 'react';
-import Router from 'next/router';
-import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 import styles from './layout.module.css';
 import Button from '@/ui/Button';
 
 
 function Navigation() {
-const route = Router;
+const router = useRouter();
 const [mobilemenu, setMobileMenu] = useState(false);
 
 const navigateButton = () => {
-  route('/');
+  router.push('/');
 }
 
 const handleMenu = () => {
@@ -25,8 +24,8 @@ const handleMenu = () => {
 }
 
 const removeScroll = () => {
+  setMobileMenu(false);
   document.body.classList.remove('no-scroll');
-
 }
 
   const links = [
@@ -43,28 +42,29 @@ const removeScroll = () => {
     {
       id: 3,
       name: 'Partnership',
-      link: '/partnership'
+      link: '/donate'
     }
   ]
   return (
     <header className={`full-width ${styles.navigation}`}>
-      <nav className={`full-width flex align-y ${styles.navlinks}`}>
+      <nav className={`full-width flex ${styles.navlinks}`}>
         <Link href='/'>
         LOGO
         </Link>
         <ul className={`flex gap-md ${styles.navlist} ${ mobilemenu ? styles.mobile : ''}`}>
+          
         {links.map((link)=> (
           <li key={link.id}>
             <Link onClick={removeScroll} href={link.link}>{link.name}</Link></li>
         ))}
-         <Button className={styles.donatebtn} onClick={navigateButton} type="button">
+         <Button className={styles.donatebtn} type="button" onClick={removeScroll}>
           <Link href='/donate'>
           Donate now
           </Link>
         </Button>
         </ul>
 
-        <Button className={styles.donatebtn} onClick={navigateButton} type="button">
+        <Button className={styles.donatebtn} type="button">
           <Link href='/donate'>
           Donate now
           </Link>

@@ -2,9 +2,9 @@ import React from 'react';
 
 import styles from './ui.module.css'
 
-function Button({children, className}) {
+function Button({children, className, ...restProps}) {
   return (
-    <button className={`flex center ${styles.button} ${className}`}>
+    <button className={`flex center ${styles.button} ${className}`} {...restProps}>
       {children}
     </button>
   )
