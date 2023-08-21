@@ -24,7 +24,7 @@ function AccountModal({setOpenModal, setOpenAcctDetails}) {
 
   return (
     <div className={styles.modalcontainer}>
-      <div className='flex flex-col gap-sm'>
+      <div className='flex flex-col center gap-sm'>
        <span className={`flex full-width ${styles.acctheading}`}>   
        <Image onClick={openPrevModal} src={backsign} alt="backsign"/>
         <Image onClick={handleRouteHome} src={badsign} alt="badsign"/>

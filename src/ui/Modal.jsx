@@ -25,7 +25,7 @@ function Modal({ setOpenModal, setOpenAcctDetails}) {
 
   return (
     <div className={styles.modalcontainer}>
-      <div className='flex flex-col gap-sm'>
+      <div className='flex flex-col center gap-sm'>
        <div className={`flex full-width ${styles.heading}`}>        
         <Image onClick={closeModal} src={badsign} alt="badsign"/>
        </div>

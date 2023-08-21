@@ -19,13 +19,6 @@ function DonateContent() {
   const [openAcctModal, setOpenAcctModal] = useState(false);
   const [openInkindModal, setOpenInkindModal] = useState(false);
 
-if(openmodal || openAcctModal){
-  document.body.classList.add("no-scroll");
-
-} else {
-  document.body.classList.remove("no-scroll");
-}
-
   const handleModalClick = () => {
     setOpenModal(!openmodal)
     console.log("yellow");
