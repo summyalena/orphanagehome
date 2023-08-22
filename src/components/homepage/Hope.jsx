@@ -53,7 +53,6 @@ function Hope() {
             className="next"
             width={40}
             height={40}
-            objectFit="contain"
             src={arrow}
             alt="arrow_right"
           />
@@ -63,7 +62,6 @@ function Hope() {
             src={arrowleft}
             width={25}
             height={25}
-            objectFit="contain"
             alt="arrow_left"
           />
         </button>

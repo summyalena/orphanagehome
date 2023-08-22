@@ -43,6 +43,11 @@ const removeScroll = () => {
       id: 3,
       name: 'Partnership',
       link: '/donate'
+    },
+    {
+      id: 4,
+      name: 'AdminLogin',
+      link: '/dashboard'
     }
   ]
   return (
