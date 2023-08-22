@@ -13,15 +13,34 @@ import backsign from '../../public/assests/icons/modalback.svg';
 function Modal({ setOpenModal }) {
   const [values, setValues] = useState({
     amount: '',
-    name: '',
+    full_name: '',
     email: '',
-    phone: '',
+    phone_number: '',
   });
   const [donate, setDonate] = useState(false);
   const [disabled, setDisabled] = useState(true);
 
+  const handleSubmit = async () => {
+    const response = await fetch('http://localhost:4000/api/donators', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await response.json();
+
+    if (data.status === 201) setOpenModal(false);
+  };
+
   useEffect(() => {
-    if (values.amount && values.name && values.email && values.phone) {
+    if (
+      values.amount &&
+      values.full_name &&
+      values.email &&
+      values.phone_number
+    ) {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -36,7 +55,12 @@ function Modal({ setOpenModal }) {
             <Image
               onClick={() => {
                 setDonate(false);
-                setValues({ amount: '', name: '', email: '', phone: '' });
+                setValues({
+                  amount: '',
+                  full_name: '',
+                  email: '',
+                  phone_number: '',
+                });
               }}
               src={backsign}
               alt="backsign"
@@ -86,7 +110,10 @@ function Modal({ setOpenModal }) {
                 <label>Full Name</label>
                 <input
                   onChange={(e) =>
-                    setValues((prev) => ({ ...prev, name: e.target.value }))
+                    setValues((prev) => ({
+                      ...prev,
+                      full_name: e.target.value,
+                    }))
                   }
                   type="text"
                 />
@@ -106,7 +133,10 @@ function Modal({ setOpenModal }) {
                 <label>Phone Number</label>
                 <input
                   onChange={(e) =>
-                    setValues((prev) => ({ ...prev, phone: e.target.value }))
+                    setValues((prev) => ({
+                      ...prev,
+                      phone_number: e.target.value,
+                    }))
                   }
                   type="number"
                 />
@@ -138,7 +168,9 @@ function Modal({ setOpenModal }) {
               </li>
             </ul>
 
-            <Button className={styles.paid}>I've sent the money!</Button>
+            <Button className={styles.paid} onClick={handleSubmit}>
+              I've sent the money!
+            </Button>
           </>
         )}
       </div>

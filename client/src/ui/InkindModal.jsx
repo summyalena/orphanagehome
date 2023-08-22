@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Card from './Card';
-import { useRouter } from 'next/navigation';
 
 import Imageone from '../../public/assests/images/monetary.svg';
 import Button from './Button';
@@ -12,19 +11,26 @@ import badsign from '../../public/assests/icons/badsign.svg';
 
 function InKindModal({ setInkindModal }) {
   const [values, setValues] = useState({
-    FullName: '',
-    phonenumber: '',
+    full_name: '',
+    phone_number: '',
     email: '',
-    donate: '',
+    kind: '',
   });
 
-  const handleSubmit = () => {
-    setInkindModal(false);
-    setValues(values);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const closeInkindModal = () => {
-    setInkindModal(false);
+    const response = await fetch('http://localhost:4000/api/donators', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    });
+
+    const data = await response.json();
+
+    if (data.status === 201) setInkindModal(false);
   };
 
   return (
@@ -33,7 +39,7 @@ function InKindModal({ setInkindModal }) {
         <Image
           width={40}
           height={40}
-          onClick={closeInkindModal}
+          onClick={() => setInkindModal(false)}
           src={badsign}
           alt="badsign"
         />
@@ -44,60 +50,41 @@ function InKindModal({ setInkindModal }) {
           className={styles.ikmodalcard}
         />
         <p>What would you like to give us</p>
+
         <form
+          onSubmit={(e) => handleSubmit(e)}
           className={`full-width flex flex-col align-x gap-md ${styles.form}`}
         >
           <label>Full Name</label>
           <input
-            name="FullName"
-            onChange={(e) =>
-              setValues((prev) => ({
-                ...prev,
-                [e.target.name]: e.target.value,
-              }))
-            }
-            value={values.FullName}
+            name="fullName"
             type="text"
+            onChange={(e) =>
+              setValues({ ...values, full_name: e.target.value })
+            }
           />
           <label>Email</label>
           <input
             name="Email"
-            onChange={(e) =>
-              setValues((prev) => ({
-                ...prev,
-                [e.target.name]: e.target.value,
-              }))
-            }
-            value={values.email}
             type="email"
+            onChange={(e) => setValues({ ...values, email: e.target.value })}
           />
+
           <label>Phone Number</label>
           <input
             name="Phone Number"
-            onChange={(e) =>
-              setValues((prev) => ({
-                ...prev,
-                [e.target.name]: e.target.value,
-              }))
-            }
-            value={values.phonenumber}
             type="number"
+            onChange={(e) =>
+              setValues({ ...values, phone_number: e.target.value })
+            }
           />
           <label>What would you like to give us?</label>
           <input
-            name="Donate"
-            onChange={(e) =>
-              setValues((prev) => ({
-                ...prev,
-                [e.target.name]: e.target.value,
-              }))
-            }
-            value={values.donate}
+            name="Kind"
             type="text"
+            onChange={(e) => setValues({ ...values, kind: e.target.value })}
           />
-          <Button onClick={handleSubmit} type="button">
-            Contact us
-          </Button>
+          <Button type="submit">Contact us</Button>
         </form>
       </div>
     </div>

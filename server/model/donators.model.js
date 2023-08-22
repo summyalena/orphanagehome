@@ -15,7 +15,6 @@ const DonatorSchema = new Schema(
     email: {
       type: String,
       required: true,
-      lowercase: true,
     },
     phone_number: {
       type: String,

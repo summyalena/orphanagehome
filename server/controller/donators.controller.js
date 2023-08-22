@@ -16,8 +16,11 @@ export const getDonators = async (req, res) => {
 export const createDonator = async (req, res) => {
   const donator = req.body;
 
+  console.log(donator);
+
   try {
     await Donator.create(donator);
+
     res
       .status(201)
       .json({ message: 'Donator created successfully', status: 201 });
