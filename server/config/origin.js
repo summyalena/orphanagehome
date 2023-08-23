@@ -6,7 +6,7 @@ const allowedOrigins = () => {
 
   if (process.env.NODE_ENV === 'production') {
     return {
-      origin: 'https://orphanagehome.vercel.app',
+      origin: 'https://orphanage.vercel.app',
       credentials: true,
       https: true,
     };
